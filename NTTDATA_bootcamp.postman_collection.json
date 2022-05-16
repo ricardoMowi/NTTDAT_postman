@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "eced7f08-7f8f-4384-b4ad-ec0917dc08bd",
+		"name": "NTTDATA_bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ClientServices",
+			"item": [
+				{
+					"name": "GetAllClients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/client/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"client",
+								"all"
+							]
+						},
+						"description": "Get all clients"
+					},
+					"response": []
+				},
+				{
+					"name": "CreateClient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientType\": \"BUSINESS\",\r\n    \"name\": \"Nike\",\r\n    \"address\": \"Calle 13 Emancipación\",\r\n    \"email\" :\"nike@gmail.com\",\r\n    \"status\": \"ACTIVE\",\r\n    \"ruc\": \"2009000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/client/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"client",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientType\": \"BUSINESS\",\r\n    \"name\": \"Nike\",\r\n    \"address\": \"Calle 13 Emancipación\",\r\n    \"email\" :\"cambio_correo@gmail.com\",\r\n    \"status\": \"ACTIVE\",\r\n    \"ruc\": \"2009000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/client/update/6282c53b66b73002ec76b5ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"client",
+								"update",
+								"6282c53b66b73002ec76b5ed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InactivateClient",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/client/setInactive/6282c53b66b73002ec76b5ed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"client",
+								"setInactive",
+								"6282c53b66b73002ec76b5ed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductServices",
+			"item": [
+				{
+					"name": "GetAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/product/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"product",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //Ejemplo para crear producto del Tipo: Cuenta a plazo fijo\r\n    \"clientId\": \"627eee309f54ec3e6a16a9f2\",\r\n    \"maximumTransactionLimit\": 2,\r\n    \"amount\": 500.00,\r\n    \"productType\": \"FIXED_TERM_ACCOUNT\",\r\n    \"transactionDate\": \"15/05/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/product/createProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"product",
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"627eee309f54ec3e6a16a9f2\",\r\n    \"maximumTransactionLimit\": 4,\r\n    \"amount\": 500.00,\r\n    \"productType\": \"FIXED_TERM_ACCOUNT\",\r\n    \"transactionDate\": \"17/05/2022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/product/update/628296562738d249c56a5fe6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"product",
+								"update",
+								"628296562738d249c56a5fe6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InactivateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/client/setInactive/628296562738d249c56a5fe6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"client",
+								"setInactive",
+								"628296562738d249c56a5fe6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TransactionServices",
+			"item": [
+				{
+					"name": "GetTransactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8003/transaction/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"transaction",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateTransaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    //Ejemplo para registrar un retiro bancario\r\n    \"idProduct\": \"628296562738d249c56a5fe6\",\r\n    \"amount\": 600.00,\r\n    \"transactionType\": \"BANK_WHITDRAWALL\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8003/transaction/createTransaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"transaction",
+								"createTransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTransaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"628296562738d249c56a5fe6\",\r\n    \"idProduct\": \"628296562738d249c56a5fe6\",\r\n    \"amount\": 650.00,\r\n    \"transactionType\": \"BANK_WHITDRAWALL\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8003/transaction/update/628296562738d249c56a5fe6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"transaction",
+								"update",
+								"628296562738d249c56a5fe6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InactivateTransaction",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8003/transaction/setInactive/628296562738d249c56a5fe6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"transaction",
+								"setInactive",
+								"628296562738d249c56a5fe6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
